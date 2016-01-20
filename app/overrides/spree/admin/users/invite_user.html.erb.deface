@@ -1,0 +1,7 @@
+<!-- insert_after "erb[silent]:contains('content_for :page_actions do')" -->
+
+<%= button_link_to Spree.t(:invite_user),
+                   spree.new_spree_user_invitation_path(),
+                   class: 'btn-success',
+                   icon: 'add',
+                   id: 'admin_invite_user_link' %>

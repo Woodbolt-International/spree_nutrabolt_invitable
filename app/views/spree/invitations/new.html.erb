@@ -1,0 +1,36 @@
+<% content_for :page_title do %>
+  Invite User
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_users_list),
+                       spree.admin_users_path,
+                       icon: 'arrow-left' %>
+  </li>
+<% end %>
+
+<div data-hook="admin_user_invite_form">
+  <%= form_for resource,
+               as: resource_name,
+               url: spree.spree_user_invitation_path(),
+               html: { method: :post} do |f| %>
+
+    <div class="omega seven columns">
+      <% resource.class.invite_key_fields.each do |field| -%>
+        <%= f.field_container field do %>
+          <p><%= f.label field %><br />
+             <%= f.text_field field, class: 'fullwidth' %></p>
+          <%= f.error_message_on field %>
+        <%- end -%>
+      <% end -%>
+
+      <div data-hook="admin_user_invite_form_buttons">
+        <div class="form-buttons filter-actions actions" data-hook="buttons">
+          <%= button t('devise.invitations.new.submit_button') %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
