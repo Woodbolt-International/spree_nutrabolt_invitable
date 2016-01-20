@@ -52,6 +52,7 @@ RSpec.configure do |config|
   # Adds convenient methods to request Spree's controllers
   # spree_get :index
   config.include Spree::TestingSupport::ControllerRequests, type: :controller
+  config.include ValidSpreeUserRequestHelper, type: :request
 
   # == Mock Framework
   #
