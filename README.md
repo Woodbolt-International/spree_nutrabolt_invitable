@@ -1,7 +1,7 @@
 SpreeNutraboltInvitable
 =======================
 
-Introduction goes here.
+Provides a button in the admin/users to create and send a notification email to the invited user.
 
 Installation
 ------------

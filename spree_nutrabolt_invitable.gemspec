@@ -3,13 +3,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_nutrabolt_invitable'
   s.version     = '3.0.4'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.summary     = 'Invites users from admin panel'
+  s.description = 'Creates and sends a notification email to the invited user'
   s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Alessio Rocco'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.email     = 'alessiorocco@nebulab.it'
+  s.homepage  = 'http://nebulab.it'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
