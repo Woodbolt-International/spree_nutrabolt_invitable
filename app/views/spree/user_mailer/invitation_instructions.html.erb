@@ -1,0 +1,21 @@
+<img src="https://s3.amazonaws.com/nutrabolt/Nutrabolt_Logo.jpg" />
+
+<h1 style='margin-top:2em'>
+  <%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %>
+</h1>
+
+<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+
+<h3><%= link_to t("devise.mailer.invitation_instructions.accept"), spree.accept_spree_user_invitation_url(@resource, :invitation_token => @token) %></h3>
+
+<p>We are very excited to present our new and exclusive Field Marketing Representative Store. In this store you will be able to cash in the Nutrabucks you earn to buy your favorite products, shirts, hats, and more from our Cellucor, Cavalier, and Royal Sport product lines!</p>
+
+<p><strong>Why an FMR store:</strong> We have created an incentive program for our FMRs through which we can continuously reward each of you for the amazing job that you are doing! This store will allow us to give out Nutrabucks and give you the freedom to pick what your prize will be!</p>
+
+<p><strong>How to earn bucks:</strong> weekly competitions, monthly competitions, quarterly competitions, showing innovation, answering surveys, completing trainings, etc. </p>
+
+<p>The even better thing is… its open anytime and is super easy to use! We will let you know when you are rewarded a Nutrabuck and you can check how many you have on the “My Account” tab at the top of the page. You can keep your Nutrabucks as long as you want so that you can save up and buy anything on the store. It is your choice and up to your discretion on how you use your Nutrabucks and the best thing is that they don’t expire!</p>
+
+<p>If you have any questions about the program please contact Magaly, Nick, Delanie or Kirkland. If you experience any technical issues, please contact Chris at <a href="mailto:cbundick@nutrabolt.com">cbundick@nutrabolt.com</a>.</p>
+
+<p><strong>In closing, we want to let each of you know how much we truly appreciate your hard work and dedication to our brand! Happy shopping!!!</strong></p>

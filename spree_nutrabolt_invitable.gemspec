@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 3.0.4'
+  s.add_dependency "solidus", '~> 1.1'
   s.add_dependency 'devise_invitable', '~> 1.4.2'
 
   s.add_development_dependency 'capybara', '~> 2.4'
