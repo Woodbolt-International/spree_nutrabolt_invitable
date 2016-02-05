@@ -3,34 +3,29 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:back_to_users_list),
-                       spree.admin_users_path,
-                       icon: 'arrow-left' %>
-  </li>
+  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_users_list),
+                        spree.admin_users_path, class: 'btn btn-default' %>
 <% end %>
 
-<div data-hook="admin_user_invite_form">
-  <%= form_for resource,
-               as: resource_name,
-               url: spree.spree_user_invitation_path(),
-               html: { method: :post} do |f| %>
+<%= render partial: 'spree/admin/shared/error_messages',
+           locals: { target: resource } %>
 
-    <div class="omega seven columns">
+<%= form_for resource,
+             as: resource_name,
+             url: spree.spree_user_invitation_path(),
+             html: { method: :post } do |f| %>
+  <fieldset>
+    <div>
       <% resource.class.invite_key_fields.each do |field| -%>
-        <%= f.field_container field do %>
-          <p><%= f.label field %><br />
-             <%= f.text_field field, class: 'fullwidth' %></p>
-          <%= f.error_message_on field %>
-        <%- end -%>
-      <% end -%>
-
-      <div data-hook="admin_user_invite_form_buttons">
-        <div class="form-buttons filter-actions actions" data-hook="buttons">
-          <%= button t('devise.invitations.new.submit_button') %>
+        <div class="form-group">
+          <%= f.label field %>
+          <%= f.text_field field, class: 'form-control' %>
         </div>
-      </div>
+      <% end -%>
     </div>
-  <% end %>
-</div>
-
+    <div class="form-actions" data-hook="buttons">
+      <%= button Spree.t('actions.create'),
+                 'ok', 'submit', { class: 'btn-success' } %>
+    </div>
+  </fieldset>
+<% end %>
