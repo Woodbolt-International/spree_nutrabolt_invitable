@@ -1,0 +1,10 @@
+<!-- insert_after "erb[silent]:contains('content_for :page_actions do')" -->
+
+<% unless @user.invitation_accepted? %>
+  <%= button_link_to Spree.t(:reinvite_user),
+                     spree.spree_user_invitation_path(spree_user: { email: @user.email }),
+                     method: :post,
+                     class: 'btn-success',
+                     icon: 'add',
+                     id: 'admin_reinvite_user_link' %>
+<% end %>
